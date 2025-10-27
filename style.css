@@ -357,87 +357,79 @@ body {
   opacity: 1;
 }
 
-.project-content {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.6s ease-out;
-  padding: 60px 40px;
-  max-width: 900px;
+/* ===== PROJECT SECTION ===== */
+.project-container {
+  max-width: 1100px;
   margin: 0 auto;
-}
-
-.project-content.visible {
-  opacity: 1;
+  padding: 80px 40px;
+  animation: fadeInUp 1.2s ease-out forwards;
+  opacity: 0;
 }
 
 .project-title {
   font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.student-name {
-  font-size: 1rem;
-  color: #555;
+  text-align: center;
   margin-bottom: 40px;
+  letter-spacing: 0.5px;
 }
 
-.section-heading {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-top: 40px;
-  margin-bottom: 10px;
+.project-synopsis {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  line-height: 1.8;
   color: #222;
 }
 
-.project-text {
-  line-height: 1.6;
-  font-size: 1rem;
-  color: #333;
+.project-synopsis p {
   margin-bottom: 20px;
-}
-
-.keyword {
-  margin-bottom: 25px;
-}
-
-.keyword h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #222;
-  margin-bottom: 5px;
-}
-
-.definition,
-.relevance {
-  font-size: 0.95rem;
-  color: #444;
-  line-height: 1.5;
-  margin-bottom: 5px;
-}
-
-.reference {
-  margin-bottom: 20px;
-}
-
-.reference h4 {
-  font-weight: bold;
-  color: #222;
-}
-
-.reference p {
-  font-size: 0.9rem;
-  color: #555;
-}
-
-/* Efeito de fade-in suave nas secções do pré-projeto */
-.fade-block {
   opacity: 0;
   transform: translateY(10px);
-  transition: opacity 0.6s cubic-bezier(0.45, 0, 0.55, 1), transform 0.6s cubic-bezier(0.45, 0, 0.55, 1);
+  animation: fadeInParagraph 0.8s ease-out forwards;
 }
 
-.project-content.visible .fade-block {
+.project-synopsis p:nth-of-type(1) { animation-delay: 0.3s; }
+.project-synopsis p:nth-of-type(2) { animation-delay: 0.5s; }
+.project-synopsis p:nth-of-type(3) { animation-delay: 0.7s; }
+
+.project-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.project-pair {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.project-pair figure {
+  width: 45%;
+  min-width: 260px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.project-pair figure:nth-child(1) { animation-delay: 0.3s; }
+.project-pair figure:nth-child(2) { animation-delay: 0.45s; }
+
+.project-pair img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.project-pair figcaption {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+}
+
+/* Quando visível */
+.project-content.visible .project-container {
   opacity: 1;
-  transform: translateY(0);
 }
